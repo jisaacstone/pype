@@ -4,7 +4,7 @@ I feel this must already exist but I could not google it so I built a prototype.
 
 Use like this:
 
-    cat data.tsv | cut -c4,9 | py "print 'DELETE FROM sites WHERE id IN ({0})'.format(','.join(IN))" | psql testdb admin
+    cat data.tsv | cut -c4,9 | py "print('DELETE FROM sites WHERE id IN ({0})'.format(','.join(IN)))" | psql testdb admin
 
 Where the `py` bit replaces the slightly longer command:
 
@@ -14,7 +14,9 @@ I made this because I am tired of reading man pages for `awk` and `sed` and othe
 
 If this has been implemented before and better, I hope someone will point that out.
 
-What you get here:
+`os`, `sys`, `csv` and `json` are pre-imported, as well as `unicode_literals` and `print_function` from the future.
+
+Aditionally the following are imported and renamed:
 
     sys.stdin -> IN
     sys.stdout -> OUT

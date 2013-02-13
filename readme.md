@@ -1,6 +1,6 @@
 # command line tool #
 
-I feel this must already exist but I could not goole it so I built a prototype.
+I feel this must already exist but I could not google it so I built a prototype.
 
 Use like this:
 

@@ -18,7 +18,7 @@ def main():
         raise StandardError("No python statement supplied for execution")
     command = args.pop(1)
     sys.argv = args
-    eval(command)
+    exec(command)
 
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@
 import os
 from distutils.core import setup
 
-setup(name='pype',
+setup(name='shell-pype',
       version='0.1',
       description='Tiny helper for command-line python',
       long_description=open(os.path.join(os.path.dirname(__file__),

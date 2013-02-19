@@ -3,10 +3,8 @@ import os
 from distutils.core import setup
 
 setup(name='shell-pype',
-      version='0.1',
+      version='0.1.1',
       description='Tiny helper for command-line python',
-      long_description=open(os.path.join(os.path.dirname(__file__),
-                                         'readme.md')).read(),
       author='jisaacstone',
       author_email='jisaacstone+python@gmail.com',
       license='MIT',

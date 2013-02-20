@@ -23,4 +23,10 @@ Aditionally the following are imported and renamed:
 
 -----
 
+Install like this:
+
+    pip install shell-pype
+
+-----
+
 For those interested in more robust solutions checkout <a href='https://github.com/alecthomas/pawk'>pawk</a> or <a href='http://code.google.com/p/pyp/'>pyp</a>.

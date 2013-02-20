@@ -1,21 +1,35 @@
 #!/usr/bin/env python
 from __future__ import unicode_literals, print_function
 
-import sys
-import json
-import csv
 import os
-from sys import stdin as IN
-from sys import stdout as OUT
+import sys
+import csv
+import json
+import operator as OP
 import itertools as IT
 import functools as FT
-import operator as OP
+from sys import stdin as IN
+from sys import stdout as OUT
 from pprint import pprint as PP
+
+
+def print_help():
+    print('USEAGE:\npype command\n\n'
+          'Where `command` is any valid python code.\n'
+          'The following modules are pre-imported:\n\n' +
+          ''.join(l.split(' ', 1)[-1].replace(' import ', '.')
+                  for l in open(__file__)
+                  if l.startswith('import') or l.startswith('from')))
 
 def main():
     args = list(sys.argv)
     if len(args) < 2:
-        raise StandardError("No python statement supplied for execution")
+        sys.stderr.write('No python command supplied!\n')
+        print_help()
+        sys.exit(1)
+    if '-h' in args:
+        print_help()
+        return
     command = args.pop(1)
     sys.argv = args
     exec(command)
